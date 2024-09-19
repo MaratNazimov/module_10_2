@@ -13,7 +13,7 @@ class Knight(Thread):
         quantity = 100
         day = 0
         print(f"{self.name}, на нас напали!")
-        while quantity >= 0:
+        while quantity > 0:
             sleep(1)
             day += 1
             quantity -= self.power
