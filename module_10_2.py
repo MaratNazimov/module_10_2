@@ -18,13 +18,14 @@ class Knight(Thread):
             day += 1
             quantity -= self.power
             with lock:
-                print(f"{self.name} сражается {day} дней, осталось {quantity} вражеских воинов.")
-                if quantity == 0:
+                if quantity <= 0:
                     print(f"{self.name} одержал победу спустя {day} дней(дня)!")
                     break
+                print(f"{self.name} сражается {day} дней, осталось {quantity} вражеских воинов.")
 
-first_knight = Knight('Sir Lancelot', 10)
-second_knight = Knight("Sir Galahad", 20)
+
+first_knight = Knight('Sir Lancelot', 100)
+second_knight = Knight("Sir Galahad", 21)
 
 first_knight.start()
 second_knight.start()
